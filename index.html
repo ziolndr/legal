@@ -113,12 +113,202 @@ textarea:focus{border-color:#111}
 
 
 .finding-cite.jump-link{appearance:none;border:0;background:transparent;padding:0;margin:0 0 5px 0;font-family:var(--mono);font-size:10px;color:#2f75ff;text-decoration:underline;text-underline-offset:3px;cursor:pointer;text-align:left;letter-spacing:.03em}.finding-cite.jump-link:hover{color:#0b55d9}.doc-passage:target{outline:2px solid rgba(47,117,255,.35);outline-offset:2px}
+
+/* ───────── mobile optimization pass ───────── */
+.nav-inner{
+  min-height:64px;
+}
+.nav-links-minimal{
+  display:flex;
+  align-items:center;
+  gap:0;
+}
+@media (max-width: 760px){
+  .nav-inner{
+    height:64px;
+    padding:0 18px;
+  }
+  .brand{
+    font-size:16px;
+    letter-spacing:.16em;
+    gap:10px;
+  }
+  .logo-star{
+    width:18px;
+    height:18px;
+  }
+  .nav-links-minimal{
+    display:flex !important;
+  }
+  .nav-cta{
+    padding:10px 14px;
+    font-size:12px;
+    white-space:nowrap;
+  }
+  .hero{
+    min-height:auto;
+    padding:54px 18px 26px;
+    display:block;
+  }
+  .hero-visual,
+  .orbit-wrap{
+    margin-top:34px;
+    min-height:360px;
+    transform:scale(.92);
+    transform-origin:center top;
+  }
+  h1{
+    font-size:clamp(48px, 13vw, 72px);
+    line-height:.96;
+    letter-spacing:-.065em;
+  }
+  .hero-copy{
+    font-size:17px;
+    line-height:1.5;
+  }
+  .hero-actions,
+  .hero-cta-row{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+  }
+  .hero-actions a,
+  .hero-cta-row a{
+    width:100%;
+    justify-content:center;
+    text-align:center;
+  }
+  .workspace-shell{
+    padding:0 12px 58px;
+  }
+  .workspace-head{
+    grid-template-columns:1fr;
+    gap:16px;
+    padding-bottom:16px;
+  }
+  .workspace-title{
+    font-size:28px;
+    line-height:1.05;
+  }
+  .workspace-copy{
+    font-size:14px;
+  }
+  .workspace-status,
+  .upload-row{
+    justify-content:flex-start;
+    gap:8px;
+  }
+  .matter-btn{
+    font-size:12px;
+    padding:9px 11px;
+  }
+  .workspace{
+    grid-template-columns:1fr !important;
+    min-height:auto;
+    border-radius:0;
+  }
+  .doc-pane{
+    order:-1;
+    min-height:560px;
+  }
+  .seat{
+    min-height:auto;
+  }
+  .seat.left,
+  .seat.right{
+    border-left:0;
+    border-right:0;
+  }
+  .seat.left{
+    border-bottom:1px solid var(--line);
+  }
+  .seat.right{
+    border-top:1px solid var(--line);
+  }
+  .seat-body{
+    padding:16px 14px;
+  }
+  .cortex-row{
+    grid-template-columns:1fr 1fr;
+    gap:8px;
+  }
+  .cortex-btn{
+    grid-template-columns:42px minmax(0,1fr);
+    min-height:62px;
+    padding:8px;
+  }
+  .cortex-btn img,
+  .cortex-btn .empty{
+    width:42px;
+    height:42px;
+  }
+  .cortex-btn span{
+    font-size:12px;
+  }
+  textarea{
+    min-height:104px;
+    font-size:14px;
+  }
+  .doc-head{
+    height:auto;
+    min-height:72px;
+    padding:14px;
+    align-items:flex-start;
+    gap:12px;
+  }
+  .doc-title{
+    font-size:16px;
+    max-width:100%;
+  }
+  .doc-tools{
+    font-size:11px;
+    justify-content:flex-end;
+  }
+  .doc-body{
+    padding:14px 12px 28px;
+  }
+  .doc-passage{
+    grid-template-columns:34px 1fr;
+    gap:10px;
+  }
+  .doc-passage-text{
+    font-size:14px;
+    line-height:1.55;
+  }
+  .results{
+    max-height:420px;
+  }
+  .footer,
+  .site-footer,
+  footer{
+    overflow:hidden;
+  }
+}
+@media (max-width: 420px){
+  .brand{
+    font-size:14px;
+    letter-spacing:.12em;
+  }
+  .nav-cta{
+    padding:9px 11px;
+    font-size:11px;
+  }
+  .cortex-row{
+    grid-template-columns:1fr;
+  }
+  .matter-btn[disabled]{
+    display:none;
+  }
+  h1{
+    font-size:46px;
+  }
+}
+
 </style>
 </head>
 <body>
-<nav class="nav"><div class="nav-inner"><a class="brand" href="#"><span class="logo-star"></span><span>ARBITER</span></a><div class="nav-links">
-      <a href="#workspace">Product</a>
-      <a href="#security">Security</a>
+<nav class="nav"><div class="nav-inner"><a class="brand" href="#"><span class="logo-star"></span><span>ARBITER</span></a><div class="nav-links nav-links-minimal">
       <a href="#contact" class="nav-cta">Request Access →</a>
     </div></div></nav>
 <header class="hero">
